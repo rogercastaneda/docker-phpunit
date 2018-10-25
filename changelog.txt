@@ -1,1 +1,2 @@
 0.1 - First version
+0.2 - Command CMD to customize input of phpunit
