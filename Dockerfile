@@ -1,6 +1,8 @@
-FROM alpine:latest
+FROM phpdockerio/php73-cli
 
-RUN apk --no-cache add php7 php7-fpm php7-json php7-zlib php7-xml php7-phar php7-iconv php7-mcrypt curl php7-curl php7-openssl php7-gd php7-dom  php7-ctype php7-pdo php7-pdo_mysql php7-zip php7-xml php7-simplexml php7-xmlreader php7-mbstring php7-apcu php7-xmlrpc php7-memcached php7-dom php7-common php7-fileinfo php7-tokenizer php7-xmlwriter && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && wget -O /usr/local/bin/phpunit https://phar.phpunit.de/phpunit-7.phar && chmod +x /usr/local/bin/phpunit
+RUN apt-get update && \ 
+  apt-get install -y wget php7.3-gd php7.3-xmlrpc && \
+  wget -O /usr/local/bin/phpunit https://phar.phpunit.de/phpunit-9.phar && chmod +x /usr/local/bin/phpunit
 
 ENTRYPOINT ["phpunit"]
 
