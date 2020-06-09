@@ -1,22 +1,11 @@
 # docker-phpunit
-docker image for phpunit
 
-## Build
-
-`docker build -t rogercastaneda/phpunit7:0.2 . -f Dockerfile`
-
-## Push to docker
-
-`docker push rogercastaneda/phpunit7:0.2`
+docker image for php 7.3 + phpunit 9
 
 ## Running
 
-`docker run -it --rm -w="/app" -v $PWD:/app rogercastaneda/phpunit7:0.2`
+`docker run -it --rm -w="/app" -v $PWD:/app rogercastaneda/phpunit:php73`
 
 ## Custom testsuites
 
-`docker run -it --rm -w="/app" -v $PWD:/app rogercastaneda/phpunit7:0.2 "--testsuite" "mytestsuite"`
-
-### References:
-
-https://phpunit.de/announcements/phpunit-7.html
+`docker run -it --rm -w="/app" -v $PWD:/app rogercastaneda/phpunit:php73 "--testsuite" "mytestsuite"`
